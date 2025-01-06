@@ -1,0 +1,207 @@
+/* General Body Styling */
+body, html {
+    background-color: hsl(187, 90%, 59%); /* Calming light blue for the whole page */
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+    overflow: hidden; /* Prevent the scroll bar */
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+   
+}
+
+/* Center Container Styling */
+.container {
+    text-align: center; /* Center text inside the container */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center child elements horizontally */
+    justify-content: center; /* Center child elements vertically */
+}
+
+/* Welcome Text */
+h1 {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 15px; /* Space below the heading */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-weight: bold;
+}
+
+/* Paragraph Styling */
+p {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 20px; /* Space below the paragraph */
+}
+
+/* Game Board Styling (Updated 4x4 Grid) */
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 100px); /* 4 columns */
+    grid-template-rows: repeat(4, 100px);    /* 4 rows */
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* Optional space above the grid */
+}
+
+/* Card Styling */
+.card {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: transform 0.3s;
+}
+
+.card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+}
+
+.card-front {
+    background-color: #007bff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.8rem;
+}
+
+.card-back {
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #007bff;
+    font-size: 3rem;
+    transform: rotateY(180deg);
+}
+
+/* Button Styling */
+button {
+    font-size: 16px;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-top: 20px; /* Add space above the button */
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+}
+
+/* Score and Timer */
+#score-timer {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    text-align: right;
+    display: flex;
+    flex-direction: column; /* Stack score and timer vertically */
+    align-items: flex-end;
+    font-size: 1.1rem;
+    color: #0c0b0b;
+    margin-bottom: 5px;
+}
+/* Small Pop-Up Message Styling */
+.win-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 2rem 3rem;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    z-index: 1000;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.win-message h2 {
+    color: #28a745;
+    margin-bottom: 0.5rem;
+    font-size: 2.5rem;
+}
+
+.win-message h3 {
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.win-message p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* Center the timeout message on the screen */
+.timeout-message {
+    position: fixed; /* Fixed positioning to keep it centered on the screen */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Offset to perfectly center */
+    background-color: white; /* White background for the container */
+    color: black; /* Black text color */
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Slight shadow for better visibility */
+    z-index: 1000; /* Ensure it's above other elements */
+}
+
+.timeout-message h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.timeout-message p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color:#0c0b0b;
+}
+
+.timeout-message button {
+    font-size: 16px;
+}

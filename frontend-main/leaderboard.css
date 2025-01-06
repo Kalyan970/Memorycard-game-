@@ -1,0 +1,69 @@
+body {
+    background-color: #f8f9fa;
+    font-family: 'Arial', sans-serif;
+}
+
+h1 {
+    color: #2c3e50;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.leaderboard-container {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.table {
+    margin-bottom: 0;
+}
+
+.table thead th {
+    background-color: #f8f9fa;
+    border-bottom: 2px solid #dee2e6;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.table tbody tr:hover {
+    background-color: #f8f9fa;
+    transform: scale(1.01);
+    transition: transform 0.2s ease;
+}
+
+.level-buttons {
+    gap: 10px;
+}
+
+.level-buttons .btn {
+    margin: 0 5px;
+    min-width: 120px;
+    transition: all 0.3s ease;
+}
+
+.level-buttons .btn:hover {
+    transform: translateY(-2px);
+}
+
+.level-buttons .btn.active {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Rank styling */
+.rank-1 {
+    color: #ffd700; /* Gold */
+    font-weight: bold;
+}
+
+.rank-2 {
+    color: #c0c0c0; /* Silver */
+    font-weight: bold;
+}
+
+.rank-3 {
+    color: #cd7f32; /* Bronze */
+    font-weight: bold;
+}

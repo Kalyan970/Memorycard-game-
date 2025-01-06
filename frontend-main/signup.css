@@ -1,0 +1,158 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #ffecd2, #fcb69f);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    display: flex;
+    background: white;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.signup-card {
+    display: flex;
+    width: 100%;
+}
+
+/* Image Section */
+.image-section {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff5f0;
+}
+
+.image-section img {
+    width: 80%;
+    border-radius: 10px;
+}
+
+/* Form Section */
+.form-section {
+    width: 50%;
+    padding: 40px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-header {
+    margin-bottom: 20px;
+}
+
+.form-header span {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #f76c6c;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.9em;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.input-group input:focus {
+    border-color: #f76c6c;
+    outline: none;
+}
+
+.remember-me {
+    margin-bottom: 20px;
+}
+
+.remember-me label {
+    font-size: 0.9em;
+    color: #555;
+}
+
+.signup-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 1em;
+    background: linear-gradient(135deg, #f76c6c, #ff9a9e);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.signup-btn:hover {
+    background: linear-gradient(135deg, #ff9a9e, #f76c6c);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        width: 95%;
+        max-width: 400px;
+    }
+
+    .image-section {
+        display: none; /* Hides the image section on smaller screens */
+    }
+
+    .form-section {
+        width: 100%;
+    }
+}
+
+/* Popup Message Styling */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+  
+  #okButton {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  #okButton:hover {
+    background-color: #45a049;
+  }

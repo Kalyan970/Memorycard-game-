@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Card Game Instructions</title>
+    <link rel="stylesheet" href="instructions.css">
+</head>
+<body>
+    <div class="instructions-container">
+        <h1>How to Play</h1>
+        <ul class="instructions-list">
+            <li>Welcome to the Memory Card Game! The goal is to match all pairs of cards.</li>
+            <li>Each level has a different difficulty: Easy, Normal, and Expert.</li>
+            <li>Start with the Easy level. You must complete it to unlock the Normal level, and so on.</li>
+            <li>Click on a card to reveal it. Remember its position and find its matching pair.</li>
+            <li>If you successfully match all cards, you win the level!</li>
+            <li>You can track your progress and scores after each level.</li>
+            <li>After completing all levels, you'll see a congratulatory page with options to replay or exit.</li>
+        </ul>
+        <button class="continue-btn" onclick="goToLogin()">Continue</button>
+    </div>
+
+    <script>
+        function goToLogin() {
+            window.location.href = "login.html"; // Replace with the correct path to your login page
+        }
+    </script>
+</body>
+</html>

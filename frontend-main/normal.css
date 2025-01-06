@@ -1,0 +1,334 @@
+/* General Body Styling */
+body{
+    background-color: hsl(187, 90%, 59%); /* Calming light blue for the whole page */
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+    overflow: hidden; /* Prevent the scroll bar */
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    
+}
+html {
+    background-color: hsl(187, 90%, 59%); /* Calming light blue for the whole page */
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+    overflow: hidden; /* Prevent the scroll bar */
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    
+}
+
+/* Welcome Text */
+h1 {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 15px; /* Space below the heading */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-weight: bold;
+}
+
+/* Paragraph Styling */
+p {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 20px; /* Space below the paragraph */
+}
+
+/* Game Board Styling (Updated 4x4 Grid) */
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 100px); /* 4 columns */
+    grid-template-rows: repeat(4, 100px);    /* 4 rows */
+    gap: 10px; /* Space between cards */
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* Optional space above the grid */
+    background-color: rgba(255, 255, 255, 0.1); /* Light overlay background for grid */
+    padding: 10px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+/* Card Styling */
+.card {
+    width: 90%; /* Ensures cards adjust to grid cell size */
+    height: 80%;
+    position: relative;
+    perspective: 1000px; /* Enable 3D flip effect */
+    cursor: pointer;
+    border-radius: 8px;
+    overflow: hidden; /* Ensures no overflow on flipping */
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d; /* Preserve 3D effect for flip */
+    transition: transform 0.4s ease;
+}
+
+.card.flipped .card-inner {
+    transform: rotateY(180deg); /* Flip effect */
+}
+
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Front and Back Faces */
+.card-front {
+    background-color: #007bff;
+    color: white;
+    font-size: 1.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+}
+
+.card-back {
+    background-color: #f8f9fa;
+    color: #007bff;
+    transform: rotateY(180deg);
+    border-radius: 8px;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Button Styling */
+button {
+    font-size: 16px;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-top: 20px; /* Add space above the button */
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+}
+
+/* Win Message Styling */
+.win-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    border: 2px solid #007bff;
+    border-radius: 10px;
+    padding: 20px 40px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 300px; /* Fixed width */
+}
+
+.win-message h2 {
+    font-size: 1.8rem;
+    color: #007bff;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Styling for score and time info */
+.win-message .score-info,
+.win-message .time-info {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Highlighting score and time text */
+.win-message .score-info span,
+.win-message .time-info span {
+    font-size: 1.2rem;
+    color: #070807; /* Green for better visibility */
+    font-weight: bold;
+}
+
+/* Button Styling */
+.win-message button {
+    font-size: 14px; /* Smaller font size */
+    padding: 6px 12px; /* Reduced padding */
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 20px; /* Slightly rounded for a compact look */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-top: 20px;
+}
+
+.win-message button:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+    #game-board {
+        grid-template-columns: repeat(3, 80px); /* Adjust to 3 columns */
+        grid-template-rows: repeat(3, 80px);    /* Adjust to 3 rows */
+        gap: 8px;
+    }
+
+    .card-face {
+        font-size: 1.2rem;
+    }
+
+    button {
+        font-size: 14px;
+    }
+}
+
+/* Small Pop-Up Message Styling */
+.modal-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    border: 2px solid #007bff;
+    border-radius: 10px;
+    padding: 15px 30px; /* Smaller padding for a compact design */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 300px; /* Fixed width for a small pop-up */
+}
+
+/* Pop-Up Message Text */
+.modal-content h2 {
+    font-size: 1.5rem; /* Smaller heading size */
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.modal-content p {
+    font-size: 1rem; /* Smaller paragraph size */
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Pop-Up Message Button Styling */
+.modal-content {
+    font-size: 12px; /* Smaller font size */
+    padding: 6px 12px; /* Reduced padding for a more compact design */
+    background-color: #28a745; /* Success green */
+    color: rgb(14, 13, 13);
+    border: none;
+    border-radius: 15px; /* Slightly smaller rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.modal-content:hover {
+    background-color: #218838; /* Darker green on hover */
+    transform: translateY(-2px);
+}
+
+/* Score and Timer Styling */
+#score-timer {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    text-align: right;
+    font-size: 1.2rem;
+    color: hwb(100 96% 2%); /* Changed to white for better visibility */
+    z-index: 100;
+}
+
+#score-timer p {
+    margin: 0;
+    color: #f2f2eb; /* Changed to white for better visibility */
+}
+
+/* Optional: Add a shadow effect to make the score and timer stand out more */
+#score-timer p {
+    text-shadow: 2px 2px 5px rgba(200, 43, 43, 0.5); /* Adds shadow to the text for better visibility */
+}
+
+/* Game Board Styling */
+#game-board {
+    margin-top: 20px;
+}
+
+/* Modal Styling */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #ffffff;
+    padding: 20px 40px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
+}
+
+
+
+/* Center the timeout message on the screen */
+.timeout-message {
+    position: fixed; /* Fixed positioning to keep it centered on the screen */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Offset to perfectly center */
+    background-color: white; /* White background for the container */
+    color: black; /* Black text color */
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Slight shadow for better visibility */
+    z-index: 1000; /* Ensure it's above other elements */
+}
+
+.timeout-message h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.timeout-message p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color:#0c0b0b;
+}
+
+.timeout-message button {
+    font-size: 16px;
+}
+    

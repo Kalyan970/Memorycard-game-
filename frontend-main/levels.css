@@ -1,0 +1,102 @@
+/* General Body Styling */
+body, html {
+    background-color: #0c0c0d;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%; /* Ensure full height */
+    overflow: hidden; /* Remove the scrollbar */
+}
+
+/* Levels Section */
+.levels-section {
+    background: url('levels.webp');
+    color: #0a0707;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%; /* Ensure full width */
+}
+
+/* Heading Style */
+h1 {
+    color: hsl(0, 5%, 4%);
+    font-weight: bold;
+    font-size: 4.0rem;
+    margin-bottom: 20px;
+}
+h4{
+    color: hsl(0, 5%, 4%);
+    font-weight: bold;
+    font-size: 2.0rem;
+    margin-bottom: 10px;
+}
+
+/* Buttons Styling */
+.level-button {
+    width: 150px;
+    height: 150px;
+    font-size: 1.5rem;
+    border-radius: 15px;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 0 15px; /* Horizontal spacing between buttons */
+    box-sizing: border-box;
+}
+
+/* Hover Effect for Buttons */
+.level-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Active Button Effect */
+.level-button:active {
+    transform: translateY(2px);
+    box-shadow: none;
+}
+
+/* Button Colors */
+.btn-primary {
+    background-color: hsl(308, 100%, 50%);
+    border-color: #007bff;
+    color: #0b0b0b;
+}
+
+.btn-warning {
+    background-color: hsl(22, 92%, 65%);
+    border-color: #ffc107;
+    color: #0c0808;
+}
+
+.btn-danger {
+    background-color: #a7eb14;
+    border-color: #dc3545;
+    color: #100c0c;
+}
+
+/* User Info */
+.user-info {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 15px 25px;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    font-size: 1.4em;
+}
+
+.user-info span {
+    font-weight: 800;
+    color: #333;
+    font-size: 1.2em;
+}

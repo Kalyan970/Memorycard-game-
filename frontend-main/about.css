@@ -1,0 +1,179 @@
+/* General Styles */
+html, body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0; /* Light gray background for the entire webpage */
+    color: #333; /* Standard text color */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6; /* Improved line height for better text readability */
+    background: linear-gradient(to right, #6a11cb, #2575fc); /* Gradient background for a dynamic look */
+    height: 100%; /* Ensure body takes full height */
+    overflow: hidden; /* Remove the scrollbar */
+    display: flex; /* Use flexbox for body */
+    flex-direction: column; /* Stack sections vertically */
+}
+
+/* Navbar Styles */
+.navbar {
+    background: linear-gradient(to right, #ff6f61, #ff8c42); /* Warm gradient from coral to orange */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Soft shadow for depth */
+    padding: 10px 20px;
+    z-index: 1000;
+    transition: background 0.3s ease;
+}
+
+.navbar:hover {
+    background: linear-gradient(to right, #ff4f35, #ff7024); /* Darker gradient on hover */
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    color: white !important;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.navbar-brand:hover {
+    transform: scale(1.05); /* Slight hover effect on brand */
+}
+
+.navbar-brand img {
+    height: 35px;
+    width: 35px;
+    margin-right: 10px;
+}
+
+/* About Section Styles */
+.about-section {
+    background: #f8f8f8; /* Clean background for the section */
+    padding-top: 60px;
+    padding-bottom: 60px;
+    padding: 20px 10px; /* Increased padding for more space */
+    border-radius: 15px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1); /* Larger shadow for more depth */
+    max-width: 1000px; /* Increase max width of the container */
+    margin: 100px auto;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden;
+    background-color: rgba(171, 209, 221, 0.902); /* Slight transparency effect for the background */
+}
+
+.about-section:hover {
+    transform: translateY(-5px); /* Lift effect when hovering over the section */
+}
+
+.about-section h2 {
+    font-size: 2.8rem;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: color 0.3s ease;
+}
+
+.about-section h2:hover {
+    color: #ff6f61; /* Change color on hover to match navbar */
+}
+
+.about-section p {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    font-weight: 400;
+    max-width: 800px; /* Increase max width */
+    margin-left: auto;
+    margin-right: auto;
+    transition: color 0.3s ease;
+    text-align: left;
+}
+
+.about-section p:hover {
+    color: #555; /* Subtle hover effect on paragraph text */
+}
+/* Button Styling */
+.about-section .btn {
+    font-size: 1.2rem; /* Increase font size */
+    padding: 15px 40px; /* Increase padding for a larger button */
+    background-color: #ff8c42;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px; /* Reduce margin to move the button closer */
+    text-transform: uppercase; /* Make button text uppercase */
+    font-weight: 600; /* Bold text for better visibility */
+    display: inline-block;
+    cursor: pointer;
+    position: relative; /* Allows for positioning adjustments */
+    top: -10px; /* Move the button slightly upwards */
+}
+
+.about-section .btn:hover {
+    background-color: #ff6f61;
+    transform: translateY(-3px); /* Slight lift effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+/* Button Focused Styling */
+.about-section .btn:focus {
+    outline: none;
+    box-shadow: 0 0 10px #ff6f61; /* Glowing border effect when focused */
+}
+
+
+
+
+/* Responsive Design */
+@media (max-width: 767px) {
+    .navbar-brand {
+        font-size: 1.6rem;
+    }
+
+    .about-section {
+        padding: 60px 30px; /* Adjust padding for smaller screens */
+        margin: 60px auto;
+    }
+
+    .about-section h2 {
+        font-size: 2.2rem;
+    }
+
+    .about-section p {
+        font-size: 1rem;
+    }
+
+    .about-section .btn {
+        font-size: 1rem;
+        padding: 12px 30px;
+    }
+}
+
+/* Global Hover Effects */
+a:hover, .btn:hover {
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+/* Smooth Scroll for Anchors */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Subtle Page Load Animation */
+body {
+    animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

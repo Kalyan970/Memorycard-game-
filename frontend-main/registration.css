@@ -1,0 +1,52 @@
+/* General body styling */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    font-family: Arial, sans-serif;
+}
+/* Modal customization */
+.modal-content {
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    border: none;
+}
+
+
+.modal-body {
+    font-size: 16px;
+    text-align: center;
+    padding: 20px;
+    color: #333;
+}
+
+.modal-footer {
+    border-top: none;
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+}
+
+.modal-footer .btn {
+    background: linear-gradient(100deg, #6a11cb, #2575fc);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;        
+    padding: 5px 20px; /* Reduced padding for smaller height */
+    border: none;
+    border-radius: 25px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+.modal-footer .btn:hover {
+    background: linear-gradient(135deg, #2575fc, #6a11cb);
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}

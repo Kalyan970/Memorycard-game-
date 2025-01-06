@@ -1,0 +1,303 @@
+/* General Body Styling */
+body, html {
+    background-color: hsl(183, 97%, 49%);
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+    overflow: hidden;  /* Prevents scrollbars */
+    background-image: url('your-image-url.jpg'); /* Add your background image URL here */
+    background-size: cover;  /* Make the image cover the entire page */
+    background-position: center;  /* Center the background image */
+}
+
+/* Heading and Paragraph Styling */
+h1 {
+    font-size: 2rem;  /* Slightly smaller font for heading */
+    font-weight: bold;
+    margin-top: -10px;  /* Further move the heading upwards */
+    margin-bottom: 20px; /* Added more space below heading */
+    text-align: center;
+}
+
+p {
+    margin-top: 5px; /* Small top margin to add some space */
+    margin-bottom: 20px; /* Added more space below paragraph */
+    font-size: 1.1rem;
+    color: #555; /* Slightly darker text color */
+    text-align: center;
+}
+
+#restartButton {
+    font-size: 1.1rem;  /* Slightly smaller font */
+    width: 160px;  /* Increased width */
+    height: 50px;  /* Increased height */
+    font-weight: bold;
+    border-radius: 25px;
+    background-color: #28a745;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: block;  /* Make the button visible */
+    margin: 20px auto;
+    opacity: 1;  /* Ensure it's visible */
+}
+
+#restartButton:hover {
+    background-color: #218838;
+    transform: translateY(-5px);
+}
+
+/* Game Board Styling (5x6 Grid with Background Image) */
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 6 equal columns */
+    grid-template-rows: repeat(5, 1fr);    /* 5 equal rows */
+    column-gap: 20px; /* Increased space between columns */
+    row-gap: 8px;    /* Space between rows (can be adjusted as well) */
+    justify-content: center;
+    margin-top: 20px;  /* Adjusted margin-top to move grid closer to top */
+    padding: 15px;
+    max-width: 550px; /* Decreased max width */
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    background-image: url('your-image-url.jpg'); /* Background image for the grid */
+    background-size: cover;  /* Make the image cover the entire grid */
+    background-position: center;  /* Center the image */
+    border-radius: 10px; /* Optional: to give rounded corners to the grid */
+}
+
+/* Card Styling (Smaller Size for Better Fit) */
+.card {
+    width: 70px;   /* Decreased width */
+    height: 70px;  /* Decreased height */
+    position: relative;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+
+.card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+}
+
+/* Updated Card Styling (Larger Icons for Better Visibility) */
+.card-back {
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #007bff;
+    font-size: 3rem; /* Increased font size for larger icons */
+    transform: rotateY(180deg);
+    border-radius: 10px;
+}
+
+/* Updated Front Styling for Consistency */
+.card-front {
+    background-color: #007bff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.8rem; /* Adjusted size for front text */
+    border-radius: 10px;
+}
+
+/* Score and Timer Display Styling */
+#score-timer {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 1rem;
+    text-align: right;
+}
+
+#score-timer p {
+    margin: 0;
+}
+
+/* Pop-up styles */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);  /* Semi-transparent background */
+    display: none;  /* Hidden by default */
+    align-items: center;  /* Center horizontally */
+    justify-content: center;  /* Center vertically */
+    z-index: 1000;  /* Ensure it's above other content */
+}
+
+/* Pop-up content styles */
+.popup-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    width: 80%;  /* Adjust the width as needed */
+    max-width: 400px;  /* Maximum width */
+}
+
+.popup h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+.popup p {
+    font-size: 18px;
+    color: #555;
+}
+
+.popup button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.popup button:hover {
+    background-color: #218838;
+}
+
+/* Center the timeout message on the screen */
+.timeout-message {
+    position: fixed; /* Fixed positioning to keep it centered on the screen */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Offset to perfectly center */
+    background-color: white; /* White background for the container */
+    color: black; /* Black text color */
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Slight shadow for better visibility */
+    z-index: 1000; /* Ensure it's above other elements */
+}
+
+.timeout-message h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.timeout-message p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color:#0c0b0b;
+}
+
+.timeout-message button {
+    font-size: 16px;
+}
+
+/* Win Message Styling */
+.win-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 2rem 3rem;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    z-index: 1000;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.win-message h2 {
+    color: #FFD700;
+    margin-bottom: 0.5rem;
+    font-size: 2.5rem;
+}
+
+.win-message h3 {
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.win-message p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.celebration-text {
+    color: #FF4500;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: 1rem 0;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.button-container button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1.1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.button-container button:hover {
+    transform: translateY(-3px);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* Exit Button Styling */
+.exit-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.exit-button .btn {
+    padding: 8px 20px;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.exit-button .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}

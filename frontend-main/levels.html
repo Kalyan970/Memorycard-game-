@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Card Game - Levels</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="levels.css">
+</head>
+<body>
+    <!-- User Info -->
+    <div class="user-info">
+        Welcome, <span id="userName">User</span>!
+    </div>
+
+    <!-- Levels Section -->
+    <section class="levels-section vh-100 d-flex align-items-center justify-content-center">
+        <div class="container text-center">
+            <h1>Starts with the Easy Level</h1>
+            <div class="row justify-content-center mt-4">
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="easy.webp" class="card-img-top" alt="Easy Level">
+                        <div class="card-body">
+                            <h5 class="card-title">Easy Level</h5>
+                            <p class="card-text">Perfect for beginners! Start your memory training journey here.</p>
+                            <a href="easylevel.html" class="btn btn-primary">Play Easy</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more levels as needed -->
+            </div>
+            <div class="mt-4">
+                <a href="leaderboard.html" class="btn btn-warning btn-lg">View Leaderboard 🏆</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- JS and Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Display user name
+        document.addEventListener('DOMContentLoaded', function() {
+            const user = JSON.parse(localStorage.getItem('user'));
+            if (user && user.name) {
+                document.getElementById('userName').textContent = user.name;
+            }
+        });
+
+        // Buttons for different levels
+        const easyButton = document.getElementById('easyButton');
+        const normalButton = document.getElementById('normalButton');
+        const expertButton = document.getElementById('expertButton');
+
+        // Check if the Easy level has been completed
+        const isEasyLevelCompleted = localStorage.getItem('easyLevelCompleted') === 'true';
+
+        // Event listeners for level buttons
+        easyButton.addEventListener('click', () => {
+            window.location.href = 'easylevel.html'; // Redirect to easy level page
+        });
+
+        normalButton.addEventListener('click', () => {
+            if (!isEasyLevelCompleted) {
+                alert('Please complete the Easy level first!');
+            } else {
+                window.location.href = 'normallevel.html'; // Redirect to normal level page
+            }
+        });
+
+        expertButton.addEventListener('click', () => {
+            if (!isEasyLevelCompleted) {
+                alert('Please complete the Easy level first!');
+            } else {
+                window.location.href = 'expertlevel.html'; // Redirect to expert level page
+            }
+        });
+    </script>
+</body>
+</html>
